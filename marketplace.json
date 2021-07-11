@@ -1,8 +1,7 @@
 {
     "app_name": "Helsinki Transit Tracking",
     "description": "Shows Realtime Tracking of Helsinki Transit Feeds using RedisTimeSeries + RedisGears", 
-    "rank": "49",
-    "hidden" : "true",
+    "rank": "360",
     "type": "Full App",
     "contributed_by": "Community",
     "repo_url": "https://github.com/redis-developer/expert-garbanzo",
@@ -20,7 +19,7 @@
     
     "language": ["Go", "Python"], 
     "redis_commands": ["TS.ADD", "TS.CREATE", "PUBLISH", "SUBSCRIBE", "XADD", "SADD", "TS.CREATERULE", "TS.MRANGE"],
-    "redis_features": ["Pub/Sub", "Streams"],
+    "redis_features": ["Pub/Sub", "Redis Streams"],
     "redis_modules": ["RedisTimeseries", "RedisGears"], 
     "app_image_urls": [
         "https://raw.githubusercontent.com/redis-developer/expert-garbanzo/master/docs/Single.png",
