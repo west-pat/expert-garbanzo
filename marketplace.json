@@ -30,6 +30,6 @@
     ],
     "youtube_url": "https://www.youtube.com/watch?v=zVUrfoIq5Fs",
     "special_tags": ["Hackathon"],
-    "verticals": [],
+    "verticals": ["Others"],
     "markdown": "https://raw.githubusercontent.com/redis-developer/expert-garbanzo/master/readme.md"
 }
