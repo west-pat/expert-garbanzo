@@ -331,5 +331,5 @@ Due to the time series policy which sets TTL on entries for 1m in series A / 2h 
 
 ------
 
-<sup>1</sup> I am not a resident of Helsinki, my knowledge of the transit authority's product offerings is limited by both a lack of familiarity with the city and the Finnish language. 
+
 
