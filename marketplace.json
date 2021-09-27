@@ -22,7 +22,7 @@
     "language": ["Go", "Python"], 
     "redis_commands": ["TS.ADD", "TS.CREATE", "PUBLISH", "SUBSCRIBE", "XADD", "SADD", "TS.CREATERULE", "TS.MRANGE"],
     "redis_features": ["Pub/Sub", "Streams"],
-    "redis_modules": ["RedisTimeseries", "RedisGears"], 
+    "redis_modules": ["RedisTimeSeries", "RedisGears"], 
     "app_image_urls": [
         "https://raw.githubusercontent.com/redis-developer/expert-garbanzo/master/docs/Single.png",
         "https://raw.githubusercontent.com/redis-developer/expert-garbanzo/master/docs/arch.jpg",
