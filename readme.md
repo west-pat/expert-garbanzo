@@ -107,6 +107,11 @@ docker exec <name of redis container> \ # (e.g. redis_hackathon_redis_1)
 ```
 
 ------
+## Deployement Notes
+
+The whole system `docker-compose` setup is currently running without security and traffic is routed via ports. If you want to deploy to a cloud instance and secure the installation, then the most easy way would be to add a reverse proxy (e.g. nginx) to the `docker-compose` setup to route via URL pathes and modify the hard-coded ports in `./frontend/index.js` to mach your pathes. If you want to add SSL, then the protocols need to be changed from `HTTP/WS` to `HTTPS/WSS` as well.
+
+------
 
 ## System Architecture
 
@@ -330,6 +335,3 @@ Prior to upgrade, system load was very high due to the write-behind from gears (
 Due to the time series policy which sets TTL on entries for 1m in series A / 2h in series B and the Gears function constantly clearing the event stream, the Redis memory usage stays fairly constant around 800-900MB.
 
 ------
-
-
-
