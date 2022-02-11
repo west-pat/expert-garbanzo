@@ -202,7 +202,7 @@ var cartoRasterLayer = new TileLayer({
 var routesVectorLayer = new VectorTileLayer({
   source: new VectorTileSource({
     format: new MVT(),
-    url: "https://" + api_host + "/tiles/routes/{z}/{x}/{y}",
+    url: "http://" + api_host + ":2151/routes/{z}/{x}/{y}",
     attributions: 'Schedule data &copy;<a href="https://transitfeeds.com/news/open-mobility-data">OpenMobilityData</a>'
   }),
   style: new Style({
@@ -218,7 +218,7 @@ routesVectorLayer.setVisible(false)
 var stopsVectorLayer = new VectorTileLayer({
   source: new VectorTileSource({
     format: new MVT(),
-    url: "https://" + api_host + "/tiles/stops/{z}/{x}/{y}",
+    url: "http://" + api_host + ":2151/stops/{z}/{x}/{y}",
     attributions: 'Transit data &copy; <a href="https://transitfeeds.com/news/open-mobility-data">OpenMobilityData</a>'
   }),
   style: new Style({
@@ -235,7 +235,7 @@ stopsVectorLayer.setVisible(false)
 var areasVectorLayer = new VectorTileLayer({
   source: new VectorTileSource({
     format: new MVT(),
-    url: "https://" + api_host + "/tiles/statistics/{z}/{x}/{y}",
+    url: "http://" + api_host + ":2151/statistics/{z}/{x}/{y}",
     attributions: 'Transit data &copy; <a href="https://transitfeeds.com/news/open-mobility-data">OpenMobilityData</a>'
   }),
   style: customStyleFunctionAreasSpeed
@@ -331,7 +331,7 @@ document.getElementById("live-toggle").addEventListener("click", function() {
 
   // Think this works...check w. on which browsers...
   livePositionsLayer.setVisible(true);
-  window.ws = new WebSocket("wss://" + api_host + "/live/locations/");
+  window.ws = new WebSocket("ws://" + api_host + ":2152/locations/");
   window.ws.onmessage = eventMsgHandler
 });
 
@@ -461,7 +461,7 @@ map.on('click', function(event) {
             oday: objProp["VP"].oday
           }
 
-          fetch('https://' + api_host + '/live/histlocations/', {method: 'POST', body: JSON.stringify(data)}).then(function (response) {
+          fetch('http://' + api_host + ':2152/histlocations/', {method: 'POST', body: JSON.stringify(data)}).then(function (response) {
             return response.json(); // The API call was successful!
           }).then(function (data) {
             // This is the JSON from our response
