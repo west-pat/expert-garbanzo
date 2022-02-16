@@ -1,7 +1,7 @@
 FROM redislabs/redismod:latest
 
 RUN apt-get update &&\
-    apt-get install -y python3 python3-distutils curl &&\
+    apt-get install -y python python3-pip python3-setuptools python3-distutils curl &&\
     apt clean
 
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py &&\
@@ -11,4 +11,6 @@ RUN echo never > /etc/rc.local
 
 COPY ./ /redis
 
-RUN python3 -m pip install -r /redis/requirements.txt 
+RUN pip install --upgrade pip
+
+RUN pip install -r /redis/requirements.txt 

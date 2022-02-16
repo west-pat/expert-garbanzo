@@ -1,8 +1,5 @@
 version: '3'
-
 services:
-  
-  ## Core Services
 
   # Redis: dmw2151/redismods -> uses redislabs default container as base 
   # See Image: https://hub.docker.com/r/redislabs/redismod
@@ -74,7 +71,7 @@ services:
     depends_on:
       - "postgis"
     volumes:
-      - ./tilegen/tiles/:/tiles
+      - tiles:/tiles
     env_file:
       - ./envs/postgres.env
     restart: 
@@ -91,7 +88,7 @@ services:
     ports: 
       - "2151:2151"
     volumes:
-      - ./tilegen/tiles/:/tiles/:ro
+      - tiles:/tiles/:ro
     env_file:
       - ./envs/layers_api.env
 
@@ -109,8 +106,8 @@ services:
       - "redis"
     env_file:
       - ./envs/redis.env
-    
 
-volumes: 
+volumes:
   postgres_data:
   redis_data:
+  tiles:
