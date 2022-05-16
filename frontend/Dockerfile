@@ -11,6 +11,7 @@ RUN cd /hslolfrontend &&\
 
 RUN apk update && \
     apk add mailcap && \
+    apk add util-linux && \
     rm /var/cache/apk/*
 
 WORKDIR ./hslolfrontend/dist
