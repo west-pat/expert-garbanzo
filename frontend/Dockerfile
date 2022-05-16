@@ -4,15 +4,17 @@ RUN mkdir -p hslolfrontend
 
 COPY ./ /hslolfrontend
 
+RUN apk update && \
+    apk add mailcap && \
+    apk add util-linux && \
+    rm /var/cache/apk/*
+
 RUN cd /hslolfrontend &&\
     npm install ol && \
     npm install --save-dev parcel-bundler &&\
     npm run build
 
-RUN apk update && \
-    apk add mailcap && \
-    apk add util-linux && \
-    rm /var/cache/apk/*
+RUN npx browserslist@latest --update-db
 
 WORKDIR ./hslolfrontend/dist
 
