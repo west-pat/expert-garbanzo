@@ -34,7 +34,7 @@ rm -f /sources/agg/statistics.geojson  &&\
             group by ogc_fid
         ) stats
         left join helsinki_places hp2 
-        using (ogc_fid);
+        using (ogc_fid)
     """
 
 # Write the Tiles out to the volume....
